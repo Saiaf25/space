@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trending Weekly - July 4, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#0d0d0d;color:#f4f1eb}body{font-family:'Source Serif 4',Georgia,serif}a{color:inherit;text-decoration-color:currentColor;text-underline-offset:.18em}.magazine{display:flex;width:1400vw;height:100vh;transition:transform .6s cubic-bezier(.76,0,.24,1)}.page{position:relative;width:100vw;height:100vh;flex:0 0 100vw;padding:7vh 7vw 10vh;overflow:hidden}.cover,.back{display:flex;flex-direction:column;justify-content:space-between;background:#0d0d0d;color:#f4f1eb}.cover-kicker,.cover-date,.cover-issue,.back-meta,.category,.repo-meta,.weekly-gain,.callout-title{font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.14em}.cover-kicker{font-size:max(12px,1vw);opacity:.55}.cover-title{font-family:'Playfair Display',serif;font-size:max(48px,8.5vw);font-weight:900;line-height:.9;max-width:11ch}.cover-subtitle{font-size:max(20px,2.2vw);line-height:1.2;max-width:28ch;opacity:.82}.cover-date{font-size:max(13px,1.1vw);opacity:.5}.cover-issue{font-size:max(12px,.9vw);opacity:.45;margin-top:2vh}.repo-page{display:grid;grid-template-columns:55fr 45fr;gap:5vw;align-items:center}.repo-page.light{background:#f4f1eb;color:#111}.repo-page.dark{background:#111;color:#f4f1eb}.repo-left,.repo-right{position:relative;z-index:1}.rank{position:absolute;z-index:-1;top:-15vh;left:-4vw;font-family:'Playfair Display',serif;font-size:33vw;font-weight:900;line-height:1;opacity:.07}.category{font-size:max(12px,1vw);font-weight:600;opacity:.58;margin-bottom:3vh}.repo-headline{font-family:'Playfair Display',serif;font-size:max(34px,5.2vw);font-weight:900;line-height:1.02;margin:0 0 3vh;letter-spacing:0}.repo-path{font-family:'IBM Plex Mono',monospace;font-size:max(14px,1.12vw);margin:0 0 3vh;overflow-wrap:anywhere}.repo-description{font-size:max(18px,1.5vw);line-height:1.34;max-width:48ch;margin:0;opacity:.86}.star-count{font-family:'Playfair Display',serif;font-size:max(58px,7vw);font-weight:900;line-height:.9;margin-bottom:2vh}.repo-meta,.weekly-gain{font-size:max(12px,1vw);opacity:.62;margin-bottom:2vh}.weekly-gain{font-weight:600}.callout{margin-top:5vh;border-left:4px solid currentColor;padding:2.4vh 0 2.4vh 2vw;background:rgba(127,127,127,.08)}.callout-title{font-size:max(12px,.92vw);font-weight:600;margin:0 0 1.6vh;opacity:.7}.callout-text{font-size:max(17px,1.35vw);line-height:1.34;margin:0;opacity:.86;max-width:32ch}.back-title{font-family:'Playfair Display',serif;font-size:max(44px,7.2vw);font-weight:900;line-height:.95;max-width:10ch}.back-meta{font-size:max(12px,1vw);opacity:.55;line-height:1.7;max-width:70ch}.dots{position:fixed;left:50%;bottom:2.5vh;transform:translateX(-50%);display:flex;gap:.55vw;z-index:10}.dot{width:.55vw;height:.55vw;min-width:7px;min-height:7px;border-radius:50%;border:1px solid currentColor;background:transparent;color:#777;opacity:.45;cursor:pointer}.dot.active{background:currentColor;opacity:.9}@media(max-width:760px){.page{padding:5vh 7vw 10vh}.repo-page{grid-template-columns:1fr;gap:4vh;align-content:center}.repo-headline{font-size:max(31px,11vw)}.repo-description{font-size:18px}.star-count{font-size:max(48px,16vw)}.callout{margin-top:2vh;padding-left:4vw}.cover-title{font-size:max(48px,17vw)}.cover-subtitle{font-size:20px}.dots{gap:6px}.dot{width:7px;height:7px}}
+</style>
+</head>
+<body>
+<main class="magazine" id="magazine">
+<section class="page cover">
+  <div>
+    <div class="cover-kicker">GitHub Trending Weekly</div>
+    <h1 class="cover-title">Open Source Signals</h1>
+  </div>
+  <div>
+    <div class="cover-subtitle">Twelve repositories reshaping how we build, ship, and think about software this week</div>
+    <div class="cover-date">July 4, 2026</div>
+    <div class="cover-issue">Issue 11</div>
+  </div>
+</section>
+<section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">01</div>
+    <div class="category">Security</div>
+    <h2 class="repo-headline">Security Work Gets an Agent Layer</h2>
+    <p class="repo-path"><a href="https://github.com/usestrix/strix" target="_blank" rel="noopener">usestrix/strix</a></p>
+    <p class="repo-description">Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">35,687</div>
+    <div class="repo-meta">Stars total / Python</div>
+    <div class="weekly-gain">7,567 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Use usestrix/strix as a checklist source for local security reviews and client-facing risk notes. Keep it read-only first, then turn the best checks into repeatable Codex review prompts.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">02</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">Ai Berkshire Breaks Into the Week</h2>
+    <p class="repo-path"><a href="https://github.com/xbtlin/ai-berkshire" target="_blank" rel="noopener">xbtlin/ai-berkshire</a></p>
+    <p class="repo-description">AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters&#x27; methodologies + multi-agent adversarial analysis.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">9,575</div>
+    <div class="repo-meta">Stars total / Python</div>
+    <div class="weekly-gain">6,230 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat xbtlin/ai-berkshire as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">03</div>
+    <div class="category">Creative Systems</div>
+    <h2 class="repo-headline">Design Systems Become Machine-Readable</h2>
+    <p class="repo-path"><a href="https://github.com/simplex-chat/simplex-chat" target="_blank" rel="noopener">simplex-chat/simplex-chat</a></p>
+    <p class="repo-description">SimpleX - the first messaging network operating without user identifiers of any kind - 100% private by design! iOS, Android and desktop apps 📱!</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">17,806</div>
+    <div class="repo-meta">Stars total / Haskell</div>
+    <div class="weekly-gain">5,971 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Map simplex-chat/simplex-chat to campaign and deliverable workflows: article-to-visual, deck-to-video, or briefing-to-asset. The interesting question is whether it shortens production without flattening taste.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">04</div>
+    <div class="category">Open Source</div>
+    <h2 class="repo-headline">Lingbot Map Breaks Into the Week</h2>
+    <p class="repo-path"><a href="https://github.com/Robbyant/lingbot-map" target="_blank" rel="noopener">Robbyant/lingbot-map</a></p>
+    <p class="repo-description">A feed-forward 3D foundation model for reconstructing scenes from streaming data</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">9,692</div>
+    <div class="repo-meta">Stars total / Python</div>
+    <div class="weekly-gain">2,171 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Save Robbyant/lingbot-map as a weak signal, not a mandate. The useful move is to ask what recurring local workflow it could improve, then test that in one small, reversible experiment.</p>
+    </div>
+  </div>
+</section><section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">05</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">The Codebase Starts Answering Back</h2>
+    <p class="repo-path"><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">diegosouzapw/OmniRoute</a></p>
+    <p class="repo-description">Never stop coding. Free AI gateway: one endpoint, 231+ providers (50+ free), connect Claude Code, Codex, Cursor, Cline &amp; Copilot to FREE Claude/GPT/Gemini. RTK+Caveman stacked compression saves 15-95% tokens, smart auto-fallback, MCP/A2A, multimodal APIs, Desktop/PWA.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">11,170</div>
+    <div class="repo-meta">Stars total / TypeScript</div>
+    <div class="weekly-gain">3,631 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat diegosouzapw/OmniRoute as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">06</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">The Codebase Starts Answering Back</h2>
+    <p class="repo-path"><a href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener">DeusData/codebase-memory-mcp</a></p>
+    <p class="repo-description">High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph — average repo in milliseconds. 158 languages, sub-ms queries, 99% fewer tokens. Single static binary, zero dependencies.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">25,961</div>
+    <div class="repo-meta">Stars total / C</div>
+    <div class="weekly-gain">10,186 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat DeusData/codebase-memory-mcp as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">07</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">The Terminal Becomes an Operating Room</h2>
+    <p class="repo-path"><a href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">ogulcancelik/herdr</a></p>
+    <p class="repo-description">agent multiplexer that lives in your terminal.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">11,210</div>
+    <div class="repo-meta">Stars total / Rust</div>
+    <div class="weekly-gain">3,024 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat ogulcancelik/herdr as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">08</div>
+    <div class="category">Business Tools</div>
+    <h2 class="repo-headline">Logto Breaks Into the Week</h2>
+    <p class="repo-path"><a href="https://github.com/logto-io/logto" target="_blank" rel="noopener">logto-io/logto</a></p>
+    <p class="repo-description">🧑‍🚀 Authentication and authorization infrastructure for SaaS and AI apps, built on OIDC and OAuth 2.1 with multi-tenancy, SSO, and RBAC.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">13,690</div>
+    <div class="repo-meta">Stars total / TypeScript</div>
+    <div class="weekly-gain">1,368 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Compare logto-io/logto with your sales, support, and CRM loops. If it can reduce follow-up friction or improve client visibility, it belongs in a small pilot before any heavier rollout.</p>
+    </div>
+  </div>
+</section><section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">09</div>
+    <div class="category">Open Source</div>
+    <h2 class="repo-headline">Opensuperwhisper Breaks Into the Week</h2>
+    <p class="repo-path"><a href="https://github.com/Starmel/OpenSuperWhisper" target="_blank" rel="noopener">Starmel/OpenSuperWhisper</a></p>
+    <p class="repo-description">macOS dictation app</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">1,683</div>
+    <div class="repo-meta">Stars total / Swift</div>
+    <div class="weekly-gain">494 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Save Starmel/OpenSuperWhisper as a weak signal, not a mandate. The useful move is to ask what recurring local workflow it could improve, then test that in one small, reversible experiment.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">10</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">Creative Ops Finds Another Gear</h2>
+    <p class="repo-path"><a href="https://github.com/browser-use/video-use" target="_blank" rel="noopener">browser-use/video-use</a></p>
+    <p class="repo-description">Edit videos with coding agents</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">14,606</div>
+    <div class="repo-meta">Stars total / Python</div>
+    <div class="weekly-gain">4,056 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat browser-use/video-use as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page light">
+  <div class="repo-left">
+    <div class="rank">11</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">Agency Agents Breaks Into the Week</h2>
+    <p class="repo-path"><a href="https://github.com/msitarzewski/agency-agents" target="_blank" rel="noopener">msitarzewski/agency-agents</a></p>
+    <p class="repo-description">A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">126,904</div>
+    <div class="repo-meta">Stars total / Shell</div>
+    <div class="weekly-gain">10,483 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat msitarzewski/agency-agents as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section><section class="page repo-page dark">
+  <div class="repo-left">
+    <div class="rank">12</div>
+    <div class="category">Agent Ops</div>
+    <h2 class="repo-headline">Skills Become the New Agent Interface</h2>
+    <p class="repo-path"><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">calesthio/OpenMontage</a></p>
+    <p class="repo-description">World&#x27;s first open-source, agentic video production system. 12 pipelines, 52 tools, 500+ agent skills. Turn your AI coding assistant into a full video production studio.</p>
+  </div>
+  <div class="repo-right">
+    <div class="star-count">32,924</div>
+    <div class="repo-meta">Stars total / Python</div>
+    <div class="weekly-gain">9,213 stars this week</div>
+    <div class="callout">
+      <p class="callout-title">How to use this</p>
+      <p class="callout-text">Treat calesthio/OpenMontage as raw material for your Codex and Claude operating system: useful for skills, prompt libraries, automation handoffs, and the recurring routines that keep local work moving.</p>
+    </div>
+  </div>
+</section>
+<section class="page back">
+  <div class="cover-kicker">End of Issue</div>
+  <div class="back-title">The weekly signal is still agent-shaped.</div>
+  <div class="back-meta">GitHub Trending Weekly / Issue 11<br>Generated by Codex from SnailDev github-hot-hub weekly archive: https://raw.githubusercontent.com/SnailDev/github-hot-hub/main/archives/2026-07-04.md</div>
+</section>
+</main>
+<div class="dots" id="dots"></div>
+<script>
+const magazine = document.getElementById('magazine');
+const total = magazine.children.length;
+const dots = document.getElementById('dots');
+let current = 0;
+let lastWheel = 0;
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('button');
+  dot.className = 'dot';
+  dot.type = 'button';
+  dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+  dot.addEventListener('click', () => go(i));
+  dots.appendChild(dot);
+}
+function go(index) {
+  current = Math.max(0, Math.min(total - 1, index));
+  magazine.style.transform = `translateX(-${current * 100}vw)`;
+  [...dots.children].forEach((dot, i) => dot.classList.toggle('active', i === current));
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'ArrowRight') go(current + 1);
+  if (event.key === 'ArrowLeft') go(current - 1);
+});
+document.addEventListener('wheel', event => {
+  const now = Date.now();
+  if (now - lastWheel < 700) return;
+  if (Math.abs(event.deltaY) < 10 && Math.abs(event.deltaX) < 10) return;
+  lastWheel = now;
+  go(current + (event.deltaY > 0 || event.deltaX > 0 ? 1 : -1));
+}, { passive: true });
+let touchStart = null;
+document.addEventListener('touchstart', event => {
+  touchStart = event.changedTouches[0].clientX;
+}, { passive: true });
+document.addEventListener('touchend', event => {
+  if (touchStart === null) return;
+  const delta = touchStart - event.changedTouches[0].clientX;
+  if (Math.abs(delta) > 50) go(current + (delta > 0 ? 1 : -1));
+  touchStart = null;
+}, { passive: true });
+go(0);
+</script>
+</body>
+</html>

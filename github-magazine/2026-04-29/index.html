@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Trending - Week of April 29, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:wght@300;400;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow:hidden;width:100vw;height:100vh;background:#0a0a0a}
+.magazine{position:relative;width:100vw;height:100vh}
+.page{position:absolute;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:stretch;transition:transform .6s cubic-bezier(.4,0,.2,1);will-change:transform;padding:6vh 5vw 10vh 5vw}
+.page--dark{background:#0a0a0a;color:#f0ece4}
+.page--light{background:#f0ece4;color:#0a0a0a}
+.page--cover{justify-content:center;align-items:center;flex-direction:column;text-align:center}
+.cover-title{font-family:'Playfair Display',serif;font-weight:900;font-size:8vw;line-height:1;letter-spacing:-.03em;margin-bottom:3vh}
+.cover-subtitle{font-family:'Source Serif 4',serif;font-weight:300;font-size:max(18px,2vw);opacity:.7;margin-bottom:2vh}
+.cover-date{font-family:'IBM Plex Mono',monospace;font-weight:300;font-size:max(14px,1.2vw);opacity:.5;letter-spacing:.1em;text-transform:uppercase}
+.cover-issue{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:max(12px,1vw);opacity:.4;letter-spacing:.15em;text-transform:uppercase;margin-top:4vh}
+.page--repo{display:grid;grid-template-columns:55% 45%;gap:0;align-items:center}
+.repo-left{display:flex;flex-direction:column;justify-content:center;padding-right:4vw;position:relative}
+.repo-right{display:flex;flex-direction:column;justify-content:center;padding-left:3vw;border-left:1px solid rgba(128,128,128,.15)}
+.rank-ghost{font-family:'Playfair Display',serif;font-weight:900;font-size:22vw;position:absolute;top:-4vh;left:-2vw;opacity:.04;line-height:1;pointer-events:none}
+.page--light .rank-ghost{opacity:.06}
+.category-tag{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:max(11px,0.9vw);letter-spacing:.12em;text-transform:uppercase;opacity:.6;margin-bottom:2.5vh}
+.repo-headline{font-family:'Playfair Display',serif;font-weight:900;font-size:max(28px,5vw);line-height:1.05;letter-spacing:-.02em;margin-bottom:2.5vh}
+.repo-path{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:max(13px,1.1vw);opacity:.6;margin-bottom:2vh;display:inline-block}
+.repo-path a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;opacity:1}
+.repo-path a:hover{opacity:.8}
+.repo-desc{font-family:'Source Serif 4',serif;font-weight:400;font-size:max(17px,1.5vw);line-height:1.6;opacity:.85}
+.star-count{font-family:'Playfair Display',serif;font-weight:900;font-size:max(40px,6.5vw);line-height:1;margin-bottom:1.5vh}
+.star-label{font-family:'IBM Plex Mono',monospace;font-weight:300;font-size:max(11px,0.85vw);letter-spacing:.1em;text-transform:uppercase;opacity:.5;margin-bottom:3vh}
+.lang-tag{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:max(12px,1vw);letter-spacing:.08em;text-transform:uppercase;opacity:.7;margin-bottom:3.5vh;padding:0.6vh 1.2vw;border:1px solid currentColor;display:inline-block;border-radius:2px}
+.callout{padding:2.5vh 2vw;margin-top:1vh;border-left:4px solid;border-radius:0 4px 4px 0}
+.page--dark .callout{background:rgba(240,236,228,.06);border-color:rgba(240,236,228,.3)}
+.page--light .callout{background:rgba(10,10,10,.04);border-color:rgba(10,10,10,.25)}
+.callout-label{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:max(10px,0.75vw);letter-spacing:.12em;text-transform:uppercase;opacity:.5;margin-bottom:1.2vh}
+.callout-text{font-family:'Source Serif 4',serif;font-weight:400;font-size:max(15px,1.3vw);line-height:1.55;opacity:.8}
+.weekly-gain{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:max(12px,1vw);opacity:.55;margin-bottom:3vh}
+.nav-dots{position:fixed;bottom:3vh;left:50%;transform:translateX(-50%);display:flex;gap:1vw;z-index:1000}
+.nav-dot{width:max(8px,.6vw);height:max(8px,.6vw);border-radius:50%;background:rgba(128,128,128,.3);cursor:pointer;transition:all .3s}
+.nav-dot--active{background:rgba(128,128,128,.9);transform:scale(1.4)}
+.back-tagline{font-family:'Source Serif 4',serif;font-weight:300;font-size:max(16px,1.8vw);opacity:.5;margin-top:3vh}
+</style>
+</head>
+<body>
+<div class="magazine" id="magazine">
+
+<div class="page page--dark page--cover" data-index="0">
+<div class="cover-issue">Issue 002</div>
+<div class="cover-title">GitHub<br>Trending</div>
+<div class="cover-subtitle">The repos reshaping how we build</div>
+<div class="cover-date">Week of April 29, 2026</div>
+</div>
+
+<div class="page page--light page--repo" data-index="1">
+<div class="repo-left">
+<div class="rank-ghost">01</div>
+<div class="category-tag">Developer Tools</div>
+<div class="repo-headline">Free Claude Code</div>
+<div class="repo-path"><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></div>
+<div class="repo-desc">Terminal utility and VSCode extension enabling free access to Claude Code functionality, with Discord integration.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">17.6k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+15,110 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Explore this as a reference for how others are wrapping Claude Code into custom workflows. The architecture of the VSCode extension could inform your own automation tooling around Claude.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="2">
+<div class="repo-left">
+<div class="rank-ghost">02</div>
+<div class="category-tag">AI Engineering</div>
+<div class="repo-headline">Skills for Claude Code</div>
+<div class="repo-path"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></div>
+<div class="repo-desc">Engineering expertise collection sourced from personal development practices. A curated set of skill files for agentic coding.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">38.4k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+18,218 this week</div>
+<div class="lang-tag">Shell</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">You already use Claude Code skills daily. Mine this repo for new skill patterns you have not tried yet, especially domain-specific ones that could enhance your automation workflows.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--light page--repo" data-index="3">
+<div class="repo-left">
+<div class="rank-ghost">03</div>
+<div class="category-tag">Security</div>
+<div class="repo-headline">Hacking Tool</div>
+<div class="repo-path"><a href="https://github.com/Z4nzu/hackingtool" target="_blank">Z4nzu/hackingtool</a></div>
+<div class="repo-desc">Comprehensive toolkit aggregating hacking utilities into a single interface for penetration testing and security research.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">68.1k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+9,252 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Use as a reference catalog of security testing tools. When auditing your own projects, check which categories of vulnerability testing are relevant to your stack and automate them.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="4">
+<div class="repo-left">
+<div class="rank-ghost">04</div>
+<div class="category-tag">AI Engineering</div>
+<div class="repo-headline">Karpathy Skills</div>
+<div class="repo-path"><a href="https://github.com/forrestchang/andrej-karpathy-skills" target="_blank">forrestchang/andrej-karpathy-skills</a></div>
+<div class="repo-desc">Single configuration file enhancing Claude Code behavior based on Andrej Karpathy's observations about LLM coding patterns.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">97.2k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+25,836 this week</div>
+<div class="lang-tag">Markdown</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">You already have this installed. Review what is changed recently in the repo. The principles here directly shape how your Claude Code sessions behave, so staying current pays dividends.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--light page--repo" data-index="5">
+<div class="repo-left">
+<div class="rank-ghost">05</div>
+<div class="category-tag">Developer Tools</div>
+<div class="repo-headline">Claude Context</div>
+<div class="repo-path"><a href="https://github.com/zilliztech/claude-context" target="_blank">zilliztech/claude-context</a></div>
+<div class="repo-desc">Code search protocol enabling comprehensive codebase context for coding agents. Built by the Milvus vector database team.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">10.1k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+3,767 this week</div>
+<div class="lang-tag">TypeScript</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Evaluate this as an MCP server for your Claude Code setup. It could dramatically improve how your agents understand large codebases by indexing them with vector search rather than relying on grep alone.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="6">
+<div class="repo-left">
+<div class="rank-ghost">06</div>
+<div class="category-tag">Finance</div>
+<div class="repo-headline">Fincept Terminal</div>
+<div class="repo-path"><a href="https://github.com/Fincept-Corporation/FinceptTerminal" target="_blank">Fincept-Corporation/FinceptTerminal</a></div>
+<div class="repo-desc">Modern finance application featuring market analytics and investment research tools. A Bloomberg Terminal alternative.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">17.3k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+5,926 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">If you are building financial dashboards or data products, study how this structures market data pipelines. The terminal UI patterns could also inspire CLI-based reporting tools in your automation stack.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--light page--repo" data-index="7">
+<div class="repo-left">
+<div class="rank-ghost">07</div>
+<div class="category-tag">AI / Video</div>
+<div class="repo-headline">Pixelle Video</div>
+<div class="repo-path"><a href="https://github.com/AIDC-AI/Pixelle-Video" target="_blank">AIDC-AI/Pixelle-Video</a></div>
+<div class="repo-desc">AI-powered automation engine for short video generation and editing. Handles scripting, scene composition, and rendering.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">7.4k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+2,330 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Consider integrating this into content marketing automation. If you are producing social content or product demos, automated short-form video generation could be a force multiplier for your workflows.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="8">
+<div class="repo-left">
+<div class="rank-ghost">08</div>
+<div class="category-tag">AI / Creative</div>
+<div class="repo-headline">Open Generative AI</div>
+<div class="repo-path"><a href="https://github.com/Anil-matcha/Open-Generative-AI" target="_blank">Anil-matcha/Open-Generative-AI</a></div>
+<div class="repo-desc">Unrestricted AI image and video generation studio with 200+ models, MIT licensed. A unified creative AI playground.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">9.8k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+4,071 this week</div>
+<div class="lang-tag">JavaScript</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Use as a quick prototyping tool when you need generated visuals for marketing materials, pitch decks, or product mockups. The 200+ model access means you can experiment without vendor lock-in.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--light page--repo" data-index="9">
+<div class="repo-left">
+<div class="rank-ghost">09</div>
+<div class="category-tag">AI Agents</div>
+<div class="repo-headline">Generic Agent</div>
+<div class="repo-path"><a href="https://github.com/lsdefine/GenericAgent" target="_blank">lsdefine/GenericAgent</a></div>
+<div class="repo-desc">Self-evolving agent demonstrating skill acquisition with reduced token consumption. Learns new capabilities autonomously.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">8.0k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+2,620 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Study the self-evolution patterns here. The token-efficient skill acquisition approach could inform how you structure your own Claude Code scheduled agents to become more capable over successive runs.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="10">
+<div class="repo-left">
+<div class="rank-ghost">10</div>
+<div class="category-tag">AI / RAG</div>
+<div class="repo-headline">RAG Anything</div>
+<div class="repo-path"><a href="https://github.com/HKUDS/RAG-Anything" target="_blank">HKUDS/RAG-Anything</a></div>
+<div class="repo-desc">All-in-one RAG framework for retrieval-augmented generation implementations. Handles multimodal documents end-to-end.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">19.3k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+2,645 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Evaluate for any knowledge-base or documentation projects. If you are building internal tools that need to reason over mixed document types like PDFs, slides, and code, this handles the multimodal parsing you would otherwise build from scratch.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--light page--repo" data-index="11">
+<div class="repo-left">
+<div class="rank-ghost">11</div>
+<div class="category-tag">DevOps / SRE</div>
+<div class="repo-headline">OpenSRE</div>
+<div class="repo-path"><a href="https://github.com/Tracer-Cloud/opensre" target="_blank">Tracer-Cloud/opensre</a></div>
+<div class="repo-desc">Open-source toolkit for constructing AI-powered site reliability engineer agents. Automates incident response and observability.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">3.8k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+1,681 this week</div>
+<div class="lang-tag">Python</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">If you manage any infrastructure, consider this for automated incident triage. The AI-SRE pattern here could complement your scheduled agents by adding self-healing capabilities to your deployment pipelines.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--repo" data-index="12">
+<div class="repo-left">
+<div class="rank-ghost">12</div>
+<div class="category-tag">Networking</div>
+<div class="repo-headline">Sniffnet</div>
+<div class="repo-path"><a href="https://github.com/GyulyVGC/sniffnet" target="_blank">GyulyVGC/sniffnet</a></div>
+<div class="repo-desc">User-friendly network traffic monitoring application with visualization capabilities. Cross-platform, built in Rust for performance.</div>
+</div>
+<div class="repo-right">
+<div class="star-count">36.8k</div>
+<div class="star-label">Total Stars</div>
+<div class="weekly-gain">+1,719 this week</div>
+<div class="lang-tag">Rust</div>
+<div class="callout">
+<div class="callout-label">How to use this</div>
+<div class="callout-text">Use for debugging network-level issues in your applications. When your automations talk to external APIs, Sniffnet can reveal exactly what is happening on the wire, faster than Wireshark for quick diagnostics.</div>
+</div>
+</div>
+</div>
+
+<div class="page page--dark page--cover" data-index="13">
+<div class="cover-title" style="font-size:5vw">End of<br>Transmission</div>
+<div class="back-tagline">12 repos. One week. Infinite leverage.</div>
+<div class="cover-date" style="margin-top:4vh">Curated April 29, 2026</div>
+</div>
+
+</div>
+
+<div class="nav-dots" id="navDots"></div>
+
+<script>
+(function(){
+const pages=document.querySelectorAll('.page');
+const totalPages=pages.length;
+let current=0;
+const dotsContainer=document.getElementById('navDots');
+
+for(let i=0;i<totalPages;i++){
+const dot=document.createElement('div');
+dot.className='nav-dot'+(i===0?' nav-dot--active':'');
+dot.addEventListener('click',()=>goTo(i));
+dotsContainer.appendChild(dot);
+}
+
+function goTo(index){
+if(index<0)index=0;
+if(index>=totalPages)index=totalPages-1;
+current=index;
+pages.forEach((p,i)=>{
+p.style.transform='translateX('+(i-current)*100+'vw)';
+});
+document.querySelectorAll('.nav-dot').forEach((d,i)=>{
+d.classList.toggle('nav-dot--active',i===current);
+});
+}
+
+pages.forEach((p,i)=>{
+p.style.transform='translateX('+i*100+'vw)';
+});
+
+document.addEventListener('keydown',e=>{
+if(e.key==='ArrowRight'||e.key==='ArrowDown')goTo(current+1);
+if(e.key==='ArrowLeft'||e.key==='ArrowUp')goTo(current-1);
+});
+
+let touchStartX=0;
+let touchStartY=0;
+document.addEventListener('touchstart',e=>{
+touchStartX=e.touches[0].clientX;
+touchStartY=e.touches[0].clientY;
+});
+document.addEventListener('touchend',e=>{
+const dx=e.changedTouches[0].clientX-touchStartX;
+const dy=e.changedTouches[0].clientY-touchStartY;
+if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>50){
+if(dx<0)goTo(current+1);
+else goTo(current-1);
+}
+});
+
+let wheelLock=false;
+document.addEventListener('wheel',e=>{
+e.preventDefault();
+if(wheelLock)return;
+const delta=Math.abs(e.deltaX)>Math.abs(e.deltaY)?e.deltaX:e.deltaY;
+if(Math.abs(delta)<30)return;
+wheelLock=true;
+setTimeout(()=>{wheelLock=false},650);
+if(delta>0)goTo(current+1);
+else goTo(current-1);
+},{passive:false});
+})();
+</script>
+</body>
+</html>

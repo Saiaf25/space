@@ -6,299 +6,402 @@
   <title>GitHub Magazine Archive</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Playfair+Display:wght@800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     :root {
       color-scheme: light;
-      --ink: #111;
-      --paper: #f4f1eb;
-      --muted: #67635c;
-      --rule: #d7d0c4;
-      --dark: #0f0f0f;
+      --bg: #f8f8f5;
+      --ink: #181817;
+      --muted: #6d6b66;
+      --faint: #a5a19a;
+      --line: #dedbd2;
+      --soft: #efeee8;
+      --accent: #3f5f56;
     }
-    html { background: var(--paper); }
+
+    html {
+      background: var(--bg);
+    }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      background: var(--paper);
+      min-height: 100dvh;
+      background: var(--bg);
       color: var(--ink);
-      font-family: "Source Serif 4", Georgia, serif;
+      font-family: "Geist", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
     }
+
     a {
       color: inherit;
-      text-decoration-thickness: 1px;
-      text-underline-offset: .18em;
     }
-    .wrap {
-      width: min(1180px, calc(100vw - 40px));
+
+    .page {
+      width: min(1120px, calc(100vw - 48px));
       margin: 0 auto;
       padding: 56px 0 72px;
     }
-    .masthead {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 36px;
-      align-items: end;
-      padding-bottom: 34px;
-      border-bottom: 1px solid var(--ink);
+
+    .topline,
+    .eyebrow,
+    .issue-number,
+    .issue-date,
+    .latest-label,
+    .issue-action {
+      font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .04em;
     }
-    .kicker,
-    .meta,
-    .issue,
-    .button,
-    .date,
-    .source {
-      font-family: "IBM Plex Mono", ui-monospace, monospace;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-    .kicker {
-      margin: 0 0 18px;
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 600;
-    }
-    h1 {
-      margin: 0;
-      max-width: 9ch;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(54px, 10vw, 132px);
-      line-height: .88;
-      letter-spacing: 0;
-    }
-    .intro {
-      max-width: 28rem;
-      margin: 0;
-      font-size: clamp(20px, 2.6vw, 31px);
-      line-height: 1.12;
-    }
-    .featured {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
-      gap: 36px;
-      align-items: stretch;
-      padding: 36px 0;
-      border-bottom: 1px solid var(--rule);
-    }
-    .featured-card {
+
+    .topline {
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 360px;
-      padding: 32px;
-      background: var(--dark);
-      color: var(--paper);
-    }
-    .issue {
-      font-size: 12px;
-      color: rgba(244, 241, 235, .62);
-      font-weight: 600;
-    }
-    .featured-card h2 {
-      margin: 26px 0 22px;
-      max-width: 10ch;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(42px, 7vw, 86px);
-      line-height: .92;
-    }
-    .featured-card p {
-      margin: 0;
-      max-width: 32rem;
-      color: rgba(244, 241, 235, .82);
-      font-size: 21px;
-      line-height: 1.28;
-    }
-    .button {
-      display: inline-flex;
-      width: max-content;
-      margin-top: 28px;
-      border-bottom: 1px solid currentColor;
-      padding-bottom: 3px;
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .notes {
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
       gap: 24px;
-      border-left: 4px solid var(--ink);
-      padding-left: 24px;
-    }
-    .notes p {
-      margin: 0;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
       color: var(--muted);
-      font-size: 19px;
-      line-height: 1.35;
+      font-size: 12px;
     }
-    .source {
-      font-size: 11px;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-    .archive {
+
+    .hero {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border-top: 1px solid var(--ink);
-      border-left: 1px solid var(--rule);
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, .58fr);
+      gap: clamp(40px, 8vw, 116px);
+      align-items: end;
+      padding: 70px 0 58px;
     }
-    .card {
-      min-height: 230px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 24px;
-      border-right: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      text-decoration: none;
-    }
-    .card:hover,
-    .card:focus-visible {
-      background: #ebe5da;
-      outline: none;
-    }
-    .date {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 11px;
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 12px;
       font-weight: 600;
+      text-transform: uppercase;
     }
-    .card h3 {
+
+    h1 {
+      max-width: 11ch;
       margin: 0;
-      font-family: "Playfair Display", Georgia, serif;
-      font-size: clamp(30px, 3.4vw, 46px);
-      line-height: .98;
+      font-size: clamp(44px, 7.8vw, 104px);
+      line-height: .92;
+      letter-spacing: -.05em;
+      font-weight: 700;
     }
-    .card p {
-      margin: 18px 0 0;
+
+    .intro {
+      max-width: 33rem;
+      margin: 0;
       color: var(--muted);
-      font-size: 17px;
+      font-size: clamp(17px, 2vw, 23px);
       line-height: 1.32;
     }
-    .footer {
-      margin-top: 38px;
+
+    .latest {
+      display: grid;
+      grid-template-columns: minmax(0, .36fr) minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      text-decoration: none;
+      transition: background-color .28s cubic-bezier(.16, 1, .3, 1), transform .28s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .latest:hover,
+    .latest:focus-visible {
+      background: var(--soft);
+      outline: none;
+    }
+
+    .latest:active,
+    .issue-link:active {
+      transform: translateY(1px);
+    }
+
+    .latest-label {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .latest-title {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 39px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-weight: 650;
+    }
+
+    .latest-meta {
+      margin: 8px 0 0;
       color: var(--muted);
       font-size: 15px;
+      line-height: 1.45;
     }
-    @media (max-width: 850px) {
-      .wrap { width: min(100vw - 28px, 680px); padding-top: 32px; }
-      .masthead,
-      .featured {
+
+    .issue-action {
+      justify-self: end;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .archive-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+      margin-top: 54px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .archive-head h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -.02em;
+    }
+
+    .archive-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .issue-list {
+      display: grid;
+    }
+
+    .issue-link {
+      display: grid;
+      grid-template-columns: 92px minmax(132px, .35fr) minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: baseline;
+      min-height: 74px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+      transition: background-color .28s cubic-bezier(.16, 1, .3, 1), transform .28s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .issue-link:hover,
+    .issue-link:focus-visible {
+      background: var(--soft);
+      outline: none;
+    }
+
+    .issue-number {
+      color: var(--faint);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .issue-date {
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .issue-title {
+      margin: 0;
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.18;
+      letter-spacing: -.025em;
+      font-weight: 600;
+    }
+
+    .issue-topic {
+      justify-self: end;
+      max-width: 220px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+      text-align: right;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 42px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .footer a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: .2em;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(100vw - 28px, 640px);
+        padding: 34px 0 52px;
+      }
+
+      .topline,
+      .footer {
+        display: grid;
+      }
+
+      .hero,
+      .latest,
+      .archive-head,
+      .issue-link {
         grid-template-columns: 1fr;
       }
-      .featured-card { min-height: 300px; padding: 26px; }
-      .archive { grid-template-columns: 1fr; }
+
+      .hero {
+        gap: 24px;
+        padding: 44px 0 38px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 14vw, 72px);
+      }
+
+      .latest {
+        gap: 14px;
+        align-items: start;
+        padding: 22px 0;
+      }
+
+      .issue-action,
+      .issue-topic {
+        justify-self: start;
+        text-align: left;
+      }
+
+      .archive-head {
+        gap: 8px;
+        margin-top: 42px;
+      }
+
+      .issue-link {
+        gap: 8px;
+        min-height: 0;
+        padding: 20px 0;
+      }
+
+      .issue-topic {
+        max-width: 35rem;
+      }
     }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header class="masthead">
+  <main class="page">
+    <div class="topline" aria-label="Archive metadata">
+      <span>Saiaf Space</span>
+      <span>GitHub Magazine Archive</span>
+    </div>
+
+    <header class="hero">
       <div>
-        <p class="kicker">Saiaf Space / Weekly HTML Magazine</p>
+        <p class="eyebrow">Weekly open-source notes</p>
         <h1>GitHub Magazine</h1>
       </div>
-      <p class="intro">An e-ink editorial archive of open-source projects worth watching, with practical notes for applying them to real work.</p>
+      <p class="intro">A quiet index for the HTML issues. Open the latest edition, or scan the archive by date.</p>
     </header>
 
-    <section class="featured" aria-labelledby="latest-title">
-      <article class="featured-card">
-        <div>
-          <div class="issue">Latest / Issue 11 / July 4, 2026</div>
-          <h2 id="latest-title">Open Source Signals</h2>
-          <p>The newest weekly edition tracks agent security, local assistants, code intelligence, and creative production systems.</p>
-        </div>
-        <a class="button" href="./2026-07-04/">Read latest issue</a>
-      </article>
-      <aside class="notes">
-        <p>Each issue is a self-contained horizontal-swipe HTML magazine. Use arrow keys, wheel, touch swipe, or the dot navigation inside the issue.</p>
-        <div class="source">Published from local Codex automation output. Issue slugs use the source archive date.</div>
-      </aside>
+    <a class="latest" href="./2026-07-04/" aria-label="Read latest issue, July 4, 2026">
+      <span class="latest-label">Latest</span>
+      <span>
+        <span class="latest-title">Issue 11 / July 4, 2026</span>
+        <span class="latest-meta">Agent security, local assistants, code memory, and production tools.</span>
+      </span>
+      <span class="issue-action">Open issue</span>
+    </a>
+
+    <section aria-labelledby="archive-title">
+      <div class="archive-head">
+        <h2 id="archive-title">All issues</h2>
+        <p>11 editions</p>
+      </div>
+
+      <nav class="issue-list" aria-label="Magazine issues">
+        <a class="issue-link" href="./2026-07-04/">
+          <span class="issue-number">Issue 11</span>
+          <span class="issue-date">Jul 4, 2026</span>
+          <span class="issue-title">Open Source Signals</span>
+          <span class="issue-topic">Security, assistants, video agents</span>
+        </a>
+        <a class="issue-link" href="./2026-06-27/">
+          <span class="issue-number">Issue 10</span>
+          <span class="issue-date">Jun 27, 2026</span>
+          <span class="issue-title">Creative Ops Finds Another Gear</span>
+          <span class="issue-topic">Design, video, code memory</span>
+        </a>
+        <a class="issue-link" href="./2026-06-20/">
+          <span class="issue-number">Issue 09</span>
+          <span class="issue-date">Jun 20, 2026</span>
+          <span class="issue-title">The Codebase Starts Answering Back</span>
+          <span class="issue-topic">Compression, reach, infrastructure</span>
+        </a>
+        <a class="issue-link" href="./2026-06-13/">
+          <span class="issue-number">Issue 08</span>
+          <span class="issue-date">Jun 13, 2026</span>
+          <span class="issue-title">Skills Become the New Interface</span>
+          <span class="issue-topic">Skills, containers, notebooks</span>
+        </a>
+        <a class="issue-link" href="./2026-06-06/">
+          <span class="issue-number">Issue 07</span>
+          <span class="issue-date">Jun 6, 2026</span>
+          <span class="issue-title">Memory, Markdown, and Machines</span>
+          <span class="issue-topic">Memory, plugins, parsing</span>
+        </a>
+        <a class="issue-link" href="./2026-05-30/">
+          <span class="issue-number">Issue 06</span>
+          <span class="issue-date">May 30, 2026</span>
+          <span class="issue-title">Build Different</span>
+          <span class="issue-topic">Plugins, graphs, voice</span>
+        </a>
+        <a class="issue-link" href="./2026-05-23/">
+          <span class="issue-number">Issue 05</span>
+          <span class="issue-date">May 23, 2026</span>
+          <span class="issue-title">Knowledge Graphs Take the Week</span>
+          <span class="issue-topic">Codegraph, OpenHuman, agents</span>
+        </a>
+        <a class="issue-link" href="./2026-05-16/">
+          <span class="issue-number">Issue 04</span>
+          <span class="issue-date">May 16, 2026</span>
+          <span class="issue-title">The Terminal Contender</span>
+          <span class="issue-topic">TUI, browser-use, opencode</span>
+        </a>
+        <a class="issue-link" href="./2026-05-08/">
+          <span class="issue-number">Issue 03</span>
+          <span class="issue-date">May 8, 2026</span>
+          <span class="issue-title">The Age of the Agent</span>
+          <span class="issue-topic">Skills, orchestration, docs</span>
+        </a>
+        <a class="issue-link" href="./2026-04-29/">
+          <span class="issue-number">Issue 02</span>
+          <span class="issue-date">Apr 29, 2026</span>
+          <span class="issue-title">Claude Code Goes Free</span>
+          <span class="issue-topic">Claude Code, finance, tooling</span>
+        </a>
+        <a class="issue-link" href="./2026-04-22/">
+          <span class="issue-number">Issue 01</span>
+          <span class="issue-date">Apr 22, 2026</span>
+          <span class="issue-title">Weekly Dispatch</span>
+          <span class="issue-topic">Agents, memory, model gateways</span>
+        </a>
+      </nav>
     </section>
 
-    <section class="archive" aria-label="Magazine issues">
-      <a class="card" href="./2026-07-04/">
-        <div>
-          <p class="date">Issue 11 / July 4, 2026</p>
-          <h3>Open Source Signals</h3>
-          <p>AI security, local meeting notes, terminal multiplexing, and video-use agents.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-06-27/">
-        <div>
-          <p class="date">Issue 10 / June 27, 2026</p>
-          <h3>Creative Ops Finds Another Gear</h3>
-          <p>Agent-native design, video systems, stock analysis, and code memory.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-06-20/">
-        <div>
-          <p class="date">Issue 09 / June 20, 2026</p>
-          <h3>The Codebase Starts Answering Back</h3>
-          <p>Codebase memory, token compression, agent reach, and infrastructure signals.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-06-13/">
-        <div>
-          <p class="date">Issue 08 / June 13, 2026</p>
-          <h3>Skills Become the New Interface</h3>
-          <p>Agent skills, Apple containers, research tools, and local notebooks.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-06-06/">
-        <div>
-          <p class="date">Issue 07 / June 6, 2026</p>
-          <h3>Memory, Markdown, and Machines</h3>
-          <p>Supermemory, MarkItDown, plugins, VTubers, and tiny hardware experiments.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-05-30/">
-        <div>
-          <p class="date">Issue 06 / May 30, 2026</p>
-          <h3>Build Different</h3>
-          <p>Claude plugins, code graphs, graphify, agent memory, and voice production.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-05-23/">
-        <div>
-          <p class="date">Issue 05 / May 23, 2026</p>
-          <h3>Knowledge Graphs Take the Week</h3>
-          <p>Codegraph, OpenHuman, academic skills, browser layers, and AI engineering.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-05-16/">
-        <div>
-          <p class="date">Issue 04 / May 16, 2026</p>
-          <h3>The Terminal Contender</h3>
-          <p>DeepSeek TUI, browser-use, TradingAgents, opencode, and visual agents.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-05-08/">
-        <div>
-          <p class="date">Issue 03 / May 8, 2026</p>
-          <h3>The Age of the Agent</h3>
-          <p>Skills, TradingAgents, deer-flow, Warp, document workflows, and orchestration.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-04-29/">
-        <div>
-          <p class="date">Issue 02 / April 29, 2026</p>
-          <h3>Claude Code Goes Free</h3>
-          <p>Free Claude Code, skills files, hacking tools, and finance terminals.</p>
-        </div>
-      </a>
-      <a class="card" href="./2026-04-22/">
-        <div>
-          <p class="date">Issue 01 / April 22, 2026</p>
-          <h3>Weekly Dispatch</h3>
-          <p>Hermes agents, memory systems, model gateways, and on-device intelligence.</p>
-        </div>
-      </a>
-    </section>
-
-    <p class="footer">Index URL: <a href="https://saiaf25.github.io/space/github-magazine/">saiaf25.github.io/space/github-magazine/</a></p>
+    <footer class="footer">
+      <span>Index: <a href="https://saiaf25.github.io/space/github-magazine/">saiaf25.github.io/space/github-magazine/</a></span>
+      <span>Static HTML archive</span>
+    </footer>
   </main>
 </body>
 </html>
